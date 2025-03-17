@@ -1,3 +1,4 @@
+
 import { Key, useContext, useState } from 'react'
 
 import { useDyteSelector } from '@dytesdk/react-web-core'
@@ -10,7 +11,7 @@ import {
   Tabs,
 } from '@heroui/react'
 import { useHotkeys } from 'react-hotkeys-hook'
-import { IoHappy, IoHappyOutline } from 'react-icons/io5'
+import { Smile, SmilePlus } from 'lucide-react'
 
 import { ControlButton } from '../common/ControlButton'
 import { RenderIf } from '../common/RenderIf/RenderIf'
@@ -170,7 +171,7 @@ export function ReactWithEmojiToggle() {
             onClick={() => {
               setIsOpen((o) => !o)
             }}>
-            {isOpen ? <IoHappy size={18} /> : <IoHappyOutline size={18} />}
+            {isOpen ? <SmilePlus size={18} /> : <Smile size={18} />}
           </ControlButton>
         </div>
       </PopoverTrigger>

@@ -1,3 +1,4 @@
+
 import {
   Dropdown,
   DropdownItem,
@@ -5,7 +6,7 @@ import {
   DropdownTrigger,
   User,
 } from '@heroui/react'
-import { BiDotsVertical } from 'react-icons/bi'
+import { MoreVertical } from 'lucide-react'
 
 import { Button } from '@/components/ui/Button'
 import { cn } from '@/utils/utils'
@@ -43,7 +44,7 @@ export function UserPresence({
       <Dropdown>
         <DropdownTrigger>
           <Button variant="light" isIconOnly>
-            <BiDotsVertical size={18} />
+            <MoreVertical size={18} />
           </Button>
         </DropdownTrigger>
         <DropdownMenu aria-label="Static Actions">

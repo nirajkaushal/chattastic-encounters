@@ -1,10 +1,11 @@
+
 import { useRef } from 'react'
 
 import { DyteAvatar, DyteParticipantTile } from '@dytesdk/react-ui-kit'
 import { useDyteMeeting, useDyteSelector } from '@dytesdk/react-web-core'
 import { DyteParticipant, DyteSelf } from '@dytesdk/web-core'
 import { motion } from 'framer-motion'
-import { IoHandRight } from 'react-icons/io5'
+import { Hand } from 'lucide-react'
 import uniqolor from 'uniqolor'
 
 import { ParticipantAudioStatus } from './ParticipantAudioStatus'
@@ -111,7 +112,7 @@ export function ParticipantTile({
             <RenderIf isTrue={!!handRaisedOrder && showOrder}>
               <span>{handRaisedOrder}</span>
             </RenderIf>
-            <IoHandRight
+            <Hand
               size={showOrder ? 16 : 20}
               className="text-yellow-500"
             />

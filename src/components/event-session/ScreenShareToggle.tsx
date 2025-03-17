@@ -1,5 +1,6 @@
+
 import { useDyteSelector } from '@dytesdk/react-web-core'
-import { IoShareOutline } from 'react-icons/io5'
+import { Share } from 'lucide-react'
 
 import { ControlButton } from '../common/ControlButton'
 
@@ -46,7 +47,7 @@ export function ScreenShareToggle() {
 
         await self.enableScreenShare()
       }}>
-      <IoShareOutline size={18} />
+      <Share size={18} />
     </ControlButton>
   )
 }

@@ -1,11 +1,11 @@
+
 import {
   Dropdown,
   DropdownTrigger,
   DropdownMenu,
   DropdownItem,
 } from '@heroui/react'
-import { IconArrowDown, IconArrowUp, IconTrash } from '@tabler/icons-react'
-import { IoDuplicateOutline, IoSaveOutline } from 'react-icons/io5'
+import { ArrowDown, ArrowUp, Copy, Save, Trash } from 'lucide-react'
 
 import { FrameType } from '@/utils/frame-picker.util'
 
@@ -13,27 +13,27 @@ export const frameActions = [
   {
     key: 'delete',
     label: 'Delete',
-    icon: <IconTrash className="h-4 w-4 text-slate-500" />,
+    icon: <Trash className="h-4 w-4 text-slate-500" />,
   },
   {
     key: 'move-up',
     label: 'Move up',
-    icon: <IconArrowUp className="h-4 w-4 text-slate-500" />,
+    icon: <ArrowUp className="h-4 w-4 text-slate-500" />,
   },
   {
     key: 'move-down',
     label: 'Move down',
-    icon: <IconArrowDown className="h-4 w-4 text-slate-500" />,
+    icon: <ArrowDown className="h-4 w-4 text-slate-500" />,
   },
   {
     key: 'duplicate-frame',
     label: 'Duplicate frame',
-    icon: <IoDuplicateOutline className="h-4 w-4 text-slate-500" />,
+    icon: <Copy className="h-4 w-4 text-slate-500" />,
   },
   {
     key: 'save-frame-in-library',
     label: 'Save to library',
-    icon: <IoSaveOutline className="h-4 w-4 text-slate-500" />,
+    icon: <Save className="h-4 w-4 text-slate-500" />,
     disableForFrames: [FrameType.BREAKOUT],
   },
 ]

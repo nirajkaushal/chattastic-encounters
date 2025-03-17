@@ -1,10 +1,10 @@
+
 import { KeyboardEvent, useState } from 'react'
 
 import { Input, Button, Chip } from '@heroui/react'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm, Controller } from 'react-hook-form'
-import { AiOutlineUsergroupAdd } from 'react-icons/ai'
-import { TbChevronDown } from 'react-icons/tb'
+import { ChevronDown, Users } from 'lucide-react'
 import * as yup from 'yup'
 
 import { DropdownActions } from './DropdownActions'
@@ -114,7 +114,7 @@ export function EmailInput({
               labelPlacement="outside"
               variant="flat"
               startContent={
-                <AiOutlineUsergroupAdd className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                <Users className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
               }
               onKeyDown={handleKeyPress}
               errorMessage={showError && fieldState.error?.message}
@@ -137,7 +137,7 @@ export function EmailInput({
                   <Chip
                     variant="light"
                     size="md"
-                    endContent={<TbChevronDown />}
+                    endContent={<ChevronDown />}
                     className="cursor-pointer rounded-md">
                     {field.value}
                   </Chip>

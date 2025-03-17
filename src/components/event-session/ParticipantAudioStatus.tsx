@@ -1,5 +1,6 @@
+
 import { DyteParticipant, DyteSelf } from '@dytesdk/web-core'
-import { IoMic, IoMicOff } from 'react-icons/io5'
+import { Mic, MicOff } from 'lucide-react'
 
 import { RenderIf } from '../common/RenderIf/RenderIf'
 
@@ -25,10 +26,10 @@ export function ParticipantAudioStatus({
         }
       )}>
       <RenderIf isTrue={muted}>
-        <IoMicOff size={20} />
+        <MicOff size={20} />
       </RenderIf>
       <RenderIf isTrue={!muted}>
-        <IoMic size={20} />
+        <Mic size={20} />
       </RenderIf>
     </div>
   )

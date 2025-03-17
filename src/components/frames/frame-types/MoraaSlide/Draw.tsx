@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react'
 
 import {
@@ -7,7 +8,7 @@ import {
   PopoverTrigger,
   Slider,
 } from '@heroui/react'
-import { MdOutlineDraw } from 'react-icons/md'
+import { PenLine } from 'lucide-react'
 
 import { ColorPicker } from '@/components/common/ColorPicker'
 import { LabelWithInlineControl } from '@/components/common/LabelWithInlineControl'
@@ -56,7 +57,7 @@ export function Draw() {
                 canvas.isDrawingMode = true
                 canvas.selection = false
               }}>
-              <MdOutlineDraw size={18} />
+              <PenLine size={18} />
               <span className="text-xs mt-1">Draw</span>
             </Button>
           </PopoverTrigger>

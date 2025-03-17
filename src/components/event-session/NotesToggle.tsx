@@ -1,5 +1,6 @@
+
 import { useHotkeys } from 'react-hotkeys-hook'
-import { TbBubbleText } from 'react-icons/tb'
+import { MessageSquare } from 'lucide-react'
 
 import { ControlButton } from '../common/ControlButton'
 
@@ -34,11 +35,7 @@ export function NotesToggle({
       }}
       onClick={onClick}>
       <div className="flex flex-col justify-center items-center py-1">
-        {isNotesSidebarOpen ? (
-          <TbBubbleText size={20} />
-        ) : (
-          <TbBubbleText size={20} />
-        )}
+        <MessageSquare size={20} />
         Note
       </div>
     </ControlButton>

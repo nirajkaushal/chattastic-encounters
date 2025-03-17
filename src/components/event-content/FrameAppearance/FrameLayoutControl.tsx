@@ -1,7 +1,8 @@
+
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { Button, Popover, PopoverContent, PopoverTrigger } from '@heroui/react'
-import { CiGrid42 } from 'react-icons/ci'
+import { LayoutGrid } from 'lucide-react'
 
 import { LabelWithInlineControl } from '@/components/common/LabelWithInlineControl'
 import { cn } from '@/utils/utils'
@@ -53,7 +54,7 @@ function FrameLayoutSelector({
     <Popover placement="bottom">
       <PopoverTrigger>
         <Button variant="light" radius="md" size="sm" className="font-bold">
-          <CiGrid42 size={20} />
+          <LayoutGrid size={20} />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="p-2">

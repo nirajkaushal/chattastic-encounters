@@ -1,9 +1,10 @@
+
 import { useContext, useEffect, useState } from 'react'
 
 import { useDyteMeeting, useDyteSelector } from '@dytesdk/react-web-core'
 import { useDebounce } from '@uidotdev/usehooks'
 import { useHotkeys } from 'react-hotkeys-hook'
-import { IoHandRight, IoHandRightOutline } from 'react-icons/io5'
+import { Hand, HandMetal } from 'lucide-react'
 
 import { ControlButton } from '../common/ControlButton'
 
@@ -76,9 +77,9 @@ export function RaiseHandToggle() {
       }}
       onClick={handleRaiseHand}>
       {isHandRaised ? (
-        <IoHandRight size={20} />
+        <HandMetal size={20} />
       ) : (
-        <IoHandRightOutline size={20} />
+        <Hand size={20} />
       )}
     </ControlButton>
   )

@@ -1,5 +1,6 @@
+
 import { Input } from '@heroui/react'
-import { IoSearchOutline } from 'react-icons/io5'
+import { Search } from 'lucide-react'
 import { SiIcons8 } from 'react-icons/si'
 
 export function Icon8Content() {
@@ -13,7 +14,7 @@ export function Icon8Content() {
         className="shadow-none"
         variant="bordered"
         startContent={
-          <IoSearchOutline className="text-2xl text-primary-200 pointer-events-none flex-shrink-0" />
+          <Search className="text-2xl text-primary-200 pointer-events-none flex-shrink-0" />
         }
       />
       <div className="flex-auto flex flex-col justify-center items-center gap-2">

@@ -8,8 +8,7 @@ import {
   Avatar,
   Input,
 } from '@heroui/react'
-import { FaCheck } from 'react-icons/fa'
-import { MdOutlineEdit } from 'react-icons/md'
+import { Check, Edit } from 'lucide-react'
 import { VscReactions } from 'react-icons/vsc'
 
 import { Emojis } from './Emojis'
@@ -215,7 +214,7 @@ export function Card({
                 variant="light"
                 className="absolute right-1 top-2 text-primary hidden group-hover/reply:flex w-5 h-5 min-w-5"
                 onPress={() => setShowReplyInput(true)}>
-                <MdOutlineEdit size={16} />
+                <Edit size={16} />
               </Button>
             </RenderIf>
           </div>
@@ -254,7 +253,7 @@ export function Card({
                   },
                 })
               }}>
-              <FaCheck />
+              <Check />
             </Button>
           </div>
         </RenderIf>

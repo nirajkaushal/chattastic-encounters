@@ -1,6 +1,7 @@
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Avatar } from '@heroui/react'
-import { PiCaretDownLight } from 'react-icons/pi'
+import { ChevronDown } from 'lucide-react'
 
 export function Trigger({
   avatar,
@@ -14,7 +15,7 @@ export function Trigger({
       <Avatar size="sm" src={avatar} className="border-2 border-primary-300" />
       <span className="w-3 text-center">{totalPresences || 1}</span>
       <div className="flex justify-center items-center">
-        <PiCaretDownLight size={16} strokeWidth={8} />
+        <ChevronDown size={16} strokeWidth={2} />
       </div>
     </div>
   )

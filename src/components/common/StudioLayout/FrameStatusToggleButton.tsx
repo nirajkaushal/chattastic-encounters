@@ -9,8 +9,7 @@ import {
 } from '@heroui/react'
 import toast from 'react-hot-toast'
 import { useHotkeys } from 'react-hotkeys-hook'
-import { IoIosCheckmarkCircle } from 'react-icons/io'
-import { MdOutlineRadioButtonUnchecked } from 'react-icons/md'
+import { CheckCircle, Circle } from 'lucide-react'
 
 import { Tooltip } from '../ShortuctTooltip'
 
@@ -21,9 +20,9 @@ import { FrameStatus } from '@/types/enums'
 import { cn, KeyboardShortcuts } from '@/utils/utils'
 
 const statusIconMap = {
-  DRAFT: <MdOutlineRadioButtonUnchecked size={20} />,
+  DRAFT: <Circle size={20} />,
   PUBLISHED: (
-    <IoIosCheckmarkCircle
+    <CheckCircle
       size={20}
       strokeWidth={1.7}
       className="text-green-500"

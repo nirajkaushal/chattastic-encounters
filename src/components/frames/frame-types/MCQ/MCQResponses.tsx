@@ -1,7 +1,6 @@
 import { Chip } from '@heroui/react'
 import { motion } from 'framer-motion'
-import { IoCheckmarkCircle } from 'react-icons/io5'
-import { RxCrossCircled } from 'react-icons/rx'
+import { CheckCircle, XCircle } from 'lucide-react'
 
 import { VotedUsers } from '../Poll/VotedUsers'
 
@@ -102,7 +101,7 @@ export function AllResponses({
                     <div className="relative z-[10] w-5 h-5 rounded-full border border-gray-400" />
                   </RenderIf>
                   <RenderIf isTrue={!!option.selected}>
-                    <IoCheckmarkCircle
+                    <CheckCircle
                       className="relative z-[10]  rounded-full text-green-500 shadow-[0_0_10px_-4px] bg-white"
                       size={22}
                     />
@@ -205,14 +204,14 @@ export function MCQResponses({
                 )}>
                 <div className="flex items-center gap-3">
                   <RenderIf isTrue={optionIsVotedAndCorrect}>
-                    <IoCheckmarkCircle
+                    <CheckCircle
                       className="relative z-[10] rounded-full text-green-500 shadow-[0_0_10px_-4px] bg-white"
                       size={20}
                     />
                   </RenderIf>
 
                   <RenderIf isTrue={optionIsVotedAndWrong}>
-                    <RxCrossCircled
+                    <XCircle
                       className="relative z-[10] rounded-full text-red-500 shadow-[0_0_10px_-4px] bg-white"
                       size={20}
                     />

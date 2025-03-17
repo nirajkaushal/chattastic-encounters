@@ -1,9 +1,7 @@
+
 import { Button } from '@heroui/button'
 import { cn } from '@heroui/react'
-import {
-  TbLayoutSidebarRightCollapse,
-  TbLayoutSidebarRightExpand,
-} from 'react-icons/tb'
+import { PanelRightClose, PanelRightOpen } from 'lucide-react'
 
 import { Editor } from '../RichText/Editor'
 
@@ -58,9 +56,9 @@ export function Preview({ frame }: PreviewProps) {
             variant="light"
             onClick={toggleShowPages}>
             {showPages ? (
-              <TbLayoutSidebarRightCollapse size={18} />
+              <PanelRightClose size={18} />
             ) : (
-              <TbLayoutSidebarRightExpand size={18} />
+              <PanelRightOpen size={18} />
             )}
           </Button>
           <Editor

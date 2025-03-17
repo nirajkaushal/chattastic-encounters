@@ -1,6 +1,5 @@
-import { FaRegClone } from 'react-icons/fa'
-import { PiFlipHorizontalFill, PiFlipVerticalFill } from 'react-icons/pi'
-import { RiBringForward, RiSendBackward } from 'react-icons/ri'
+
+import { Copy, FlipHorizontal, FlipVertical, BringToFront, SendToBack } from 'lucide-react'
 
 import { ControlButton } from '@/components/common/ControlButton'
 import { Fill } from '@/components/frames/frame-types/MoraaSlide/Fill'
@@ -33,7 +32,7 @@ export function MoraaSlideActiveObjectCommonAppearance() {
             canvas.sendToBack(activeObject)
             canvas.renderAll()
           }}>
-          <RiSendBackward size={18} />
+          <SendToBack size={18} />
         </ControlButton>
         <ControlButton
           tooltipProps={{
@@ -48,7 +47,7 @@ export function MoraaSlideActiveObjectCommonAppearance() {
             activeObject.bringForward()
             canvas.renderAll()
           }}>
-          <RiBringForward size={18} />
+          <BringToFront size={18} />
         </ControlButton>
         <ControlButton
           tooltipProps={{
@@ -63,7 +62,7 @@ export function MoraaSlideActiveObjectCommonAppearance() {
             activeObject?.set('flipX', !activeObject.flipX)
             canvas.renderAll()
           }}>
-          <PiFlipHorizontalFill size={18} />
+          <FlipHorizontal size={18} />
         </ControlButton>
         <ControlButton
           tooltipProps={{
@@ -78,7 +77,7 @@ export function MoraaSlideActiveObjectCommonAppearance() {
             activeObject?.set('flipY', !activeObject.flipY)
             canvas.renderAll()
           }}>
-          <PiFlipVerticalFill size={18} />
+          <FlipVertical size={18} />
         </ControlButton>
         <ControlButton
           tooltipProps={{
@@ -92,7 +91,7 @@ export function MoraaSlideActiveObjectCommonAppearance() {
           onClick={() => {
             dupliacateObjects(canvas)
           }}>
-          <FaRegClone size={16} />
+          <Copy size={16} />
         </ControlButton>
       </div>
     </div>

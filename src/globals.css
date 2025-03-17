@@ -1,0 +1,545 @@
+@import './styles/editor.css';
+@import './styles/patterns.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --event-patterns-theme-color: 0, 0, 0;
+  --event-patterns-theme-background: #fafafa;
+
+  --dyte-participant-tile-bg-color: #3f3840;
+}
+
+@layer base {
+  html,
+  * {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-poppins text-sm;
+  }
+}
+
+@layer components {
+  .heading-1 {
+    @apply text-5xl leading-normal font-semibold;
+  }
+
+  .heading-1-bold {
+    @apply text-5xl leading-normal font-bold;
+  }
+
+  .heading-2 {
+    @apply text-4xl leading-normal font-semibold;
+  }
+
+  .heading-2-bold {
+    @apply text-4xl leading-normal font-bold;
+  }
+
+  .heading-3 {
+    @apply text-3xl leading-normal font-semibold;
+  }
+
+  .heading-3-bold {
+    @apply text-3xl leading-normal font-bold;
+  }
+
+  .subheading-1 {
+    @apply text-2xl leading-normal font-semibold;
+  }
+
+  .subheading-2 {
+    @apply text-xl leading-normal font-semibold;
+  }
+
+  .subheading-3 {
+    @apply text-lg leading-normal font-semibold;
+  }
+
+  .body-bold {
+    @apply text-base leading-normal font-bold;
+  }
+
+  .body-normal {
+    @apply text-base leading-normal font-normal;
+  }
+
+  .body-thin {
+    @apply text-base leading-normal font-thin;
+  }
+
+  .white-bg-with-shadow {
+    @apply bg-white p-2 rounded-md shadow-2xl;
+  }
+
+  .live-button {
+    @apply !bg-transparent !text-black hover:!text-primary-500 !gap-1;
+  }
+
+  .live-button.active {
+    @apply !text-primary-500 !opacity-100;
+  }
+
+  .studio-button {
+    @apply !bg-gray-50 !border-1 !border-gray-200 hover:!bg-white !text-gray-500 !text-sm;
+  }
+
+  .studio-button.active {
+    @apply !bg-white !border-1 !border-primary !text-primary;
+  }
+}
+
+/* Google Fonts */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
+/* Uppy Custom Style */
+.uppy-Dashboard-inner,
+.uppy-Dashboard-innerWrapper {
+  border-width: 0px !important;
+  border-radius: 0 !important;
+}
+
+/* Tiptap Editor */
+
+.tiptap {
+  @apply min-h-full;
+}
+
+.ProseMirror-focused {
+  @apply outline-none;
+}
+
+.tiptap h1 {
+  @apply text-4xl font-bold;
+}
+
+.tiptap h2 {
+  @apply text-3xl font-bold;
+}
+
+.tiptap h3 {
+  @apply text-2xl font-bold;
+}
+
+.tiptap h4 {
+  @apply text-xl font-bold;
+}
+
+.tiptap h5 {
+  @apply text-lg font-bold;
+}
+
+.tiptap h6 {
+  @apply text-base font-bold;
+}
+
+.tiptap p {
+  @apply text-base min-h-[1.5rem];
+}
+
+.tiptap ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+.tiptap ol {
+  list-style-type: decimal;
+  margin-left: 1.5rem;
+}
+
+.tiptap blockquote {
+  @apply border-l-4 border-gray-200 pl-4;
+}
+
+.tiptap pre {
+  @apply p-4 bg-gray-100;
+}
+
+.tiptap code {
+  @apply bg-gray-100 p-1;
+}
+
+.tiptap a {
+  @apply text-blue-500 underline;
+}
+
+.tiptap a:hover {
+  @apply text-blue-600 underline;
+}
+
+.tiptap img {
+  @apply mx-auto my-4;
+}
+
+.tiptap img:hover {
+  @apply shadow-lg;
+}
+
+.tiptap hr {
+  @apply my-4 border-t border-primary;
+}
+
+.tiptap table {
+  border-collapse: collapse;
+  margin: 0;
+  /* overflow: hidden; */
+  table-layout: fixed;
+  width: 100%;
+}
+.tiptap table td,
+.tiptap table th {
+  border: 2px solid #ced4da;
+  box-sizing: border-box;
+  min-width: 1em;
+  padding: 3px 5px;
+  position: relative;
+  vertical-align: top;
+}
+.tiptap table td > *,
+.tiptap table th > * {
+  margin-bottom: 0;
+}
+.tiptap table th {
+  background-color: #f1f3f5;
+  font-weight: bold;
+  text-align: left;
+}
+.tiptap table .selectedCell:after {
+  background: rgba(200, 200, 255, 0.4);
+  content: '';
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 2;
+}
+.tiptap table .column-resize-handle {
+  background-color: #adf;
+  bottom: -2px;
+  position: absolute;
+  right: -2px;
+  pointer-events: none;
+  top: 0;
+  width: 4px;
+}
+.tiptap table p {
+  margin: 0;
+}
+.tableWrapper {
+  padding: 1rem 0;
+  /* overflow-x: auto; */
+}
+.resize-cursor {
+  cursor: ew-resize;
+  cursor: col-resize;
+}
+
+/* Block Content Styles */
+.block-content-header,
+.block-content-paragraph {
+  @apply w-full;
+}
+.block-content-header h1 {
+  @apply text-4xl font-bold;
+}
+
+.block-content-header h2 {
+  @apply text-3xl font-bold;
+}
+
+.block-content-header h3 {
+  @apply text-2xl font-bold;
+}
+
+.flying-emojis {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  z-index: 99;
+}
+
+.flying-emojis .emoji {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  font-size: 48px;
+  line-height: 1;
+  width: 48px;
+  height: 48px;
+}
+
+.flying-emojis .emoji.fire-up {
+  position: absolute;
+  bottom: 0;
+  animation:
+    fire-up 3s cubic-bezier(0.24, 1.26, 0.89, 1.09) forwards,
+    fadeaway 1s ease 2s forwards;
+}
+
+@keyframes fire-up {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-50vh);
+  }
+}
+
+@keyframes fadeaway {
+  to {
+    opacity: 0;
+  }
+}
+
+/* Participant Tiles  */
+
+/* Center align 2 orphan items */
+.participant-grid {
+  grid-column: span 2;
+}
+
+/* GRID 2*2 */
+.grid-cols-4 .participant-grid:last-child:nth-child(2n + 1) {
+  grid-column-end: -2;
+}
+
+/* Grid 3*3 */
+/* Dealing with 2 orphan items */
+.grid-cols-6 .participant-grid:last-child:nth-child(3n - 1) {
+  grid-column-end: -2;
+}
+
+.grid-cols-6 .participant-grid:nth-last-child(2):nth-child(3n + 1) {
+  grid-column-end: 4;
+}
+
+/* Dealing with single orphan */
+.grid-cols-6 .participant-grid:last-child:nth-child(3n - 2) {
+  grid-column-end: 5;
+}
+
+/* Grid 4*4 */
+/* Dealing with 2 orphan items */
+.grid-cols-8 .participant-grid:last-child:nth-child(4n - 1) {
+  grid-column-end: -2;
+}
+
+.grid-cols-8 .participant-grid:nth-last-child(2):nth-child(4n + 1) {
+  grid-column-end: 4;
+}
+
+/* Dealing with single orphan */
+.grid-cols-8 .participant-grid:last-child:nth-child(4n - 3) {
+  grid-column-end: 5;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.slide-in {
+  animation: slideFromLeft 0.3s ease-out;
+}
+
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* BG Patterns */
+.bg-pattern-1 {
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 200 200'%3E%3Cpolygon fill='%23E9D5FF' fill-opacity='0.43' points='100 0 0 100 100 100 100 200 200 100 200 0'/%3E%3C/svg%3E");
+}
+
+.bg-studio {
+  background: #fbfbfb;
+  /* background-image: url('/images/background.svg');
+  background-size: cover;
+  background-position: center; */
+}
+
+.bg-live {
+  /* background: rgba(235, 224, 255, 0.4) url('/images/background.svg');
+  background-size: cover;
+  background-position: center; */
+  background: #fcfcfd;
+}
+
+.bg-blury {
+  /* background: rgba(219, 174, 255, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(219, 174, 255, 0.32); */
+
+  background: rgba(235, 224, 255, 1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(235, 224, 255, 0.32);
+}
+
+/* Selection Color */
+*::selection {
+  background: #dac8fa !important;
+  color: black !important;
+}
+*::-moz-selection {
+  background: #dac8fa !important;
+  color: black !important;
+}
+*::-webkit-selection {
+  background: #dac8fa !important;
+  color: black !important;
+}
+
+/* Moraa Slide */
+.moraa-slide-preview svg {
+  @apply absolute left-0 top-0 w-full h-full;
+}
+
+/* Using this one to hide scrollbars for thumbnails */
+.hide-scrollbars div {
+  overflow: hidden; /* Hide scrollbars for all divs inside */
+}
+
+#note-editor p {
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  font-size: 14px !important;
+}
+
+#note-editor ul {
+  margin: 0 !important;
+}
+
+/****************************************/
+/* Dyte Custom Styles */
+/****************************************/
+
+/* Dyte Notification */
+dyte-notifications {
+  @apply fixed top-0 left-1/2 -translate-x-1/2 z-50 h-fit w-fit flex justify-center items-center p-2;
+}
+dyte-notification {
+  @apply !animate-none !transition-none;
+}
+
+/* Dyte Clock */
+dyte-clock dyte-icon {
+  @apply !hidden;
+}
+
+dyte-audio-visualizer::part(canvas) {
+  color: white;
+}
+
+.giphy-search-bar > div > div {
+  background: #7c3aed !important;
+}
+
+/* Tldraw styles overrides for recorder view */
+.recorder-container .tlui-helper-buttons {
+  display: none !important;
+}
+
+.tlui-toolbar {
+  padding-bottom: 0 !important;
+}
+
+.tlui-toolbar__extras__controls.tlui-buttons__horizontal,
+.tlui-toolbar__tools,
+.tlui-menu,
+.tlui-popover__content,
+.tlui-menu-zone,
+.tlui-navigation-panel::before,
+.tlui-style-panel__wrapper {
+  background-color: #fff !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+.tlui-toolbar__tools,
+.tlui-menu-zone,
+.tlui-navigation-panel::before,
+.tlui-style-panel__wrapper {
+  margin: 4px !important;
+}
+
+.sanitized-rich-text .node-imageUpload,
+.sanitized-rich-text .node-aiWriter,
+.sanitized-rich-text .node-aiImage {
+  display: none;
+}
+
+.word-cloud svg {
+  width: 100% !important;
+}

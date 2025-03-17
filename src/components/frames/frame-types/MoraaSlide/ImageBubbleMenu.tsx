@@ -1,3 +1,4 @@
+
 import { useCallback } from 'react'
 
 import {
@@ -8,8 +9,7 @@ import {
   DropdownTrigger,
 } from '@heroui/react'
 import { fabric } from 'fabric'
-import { BsShadows } from 'react-icons/bs'
-import { SlRefresh } from 'react-icons/sl'
+import { Gem, RefreshCw } from 'lucide-react'
 
 import { BubbleMenuMoreOptions } from './BubbleMenuMoreOptions'
 
@@ -122,7 +122,7 @@ export function ImageBubbleMenu({ canvas }: { canvas: fabric.Canvas }) {
             radius="md"
             variant="light"
             className="h-7 text-sm flex justify-center items-center gap-1 px-1">
-            <SlRefresh size={16} />
+            <RefreshCw size={16} />
             <span>Replace</span>
           </Button>
         }
@@ -159,7 +159,7 @@ export function ImageBubbleMenu({ canvas }: { canvas: fabric.Canvas }) {
             radius="md"
             variant="light"
             className="h-7 text-sm flex justify-center items-center gap-1 px-1">
-            <BsShadows size={16} />
+            <Gem size={16} />
             <span>Shadow</span>
           </Button>
         </DropdownTrigger>

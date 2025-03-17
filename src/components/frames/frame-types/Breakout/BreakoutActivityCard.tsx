@@ -1,14 +1,12 @@
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import { useRef } from 'react'
 
 import { Avatar } from '@heroui/react'
-import { IconTrash } from '@tabler/icons-react'
 import { Draggable } from 'react-beautiful-dnd'
-import { IoEllipsisVerticalOutline } from 'react-icons/io5'
-import { TbApps, TbTriangleSquareCircleFilled } from 'react-icons/tb'
-import { TiDocumentDelete } from 'react-icons/ti'
+import { Apps, CircleSquareTriangle, MoreVertical, Trash2 } from 'lucide-react'
 
 // TODO: Fix this.
 // eslint-disable-next-line import/no-cycle
@@ -48,17 +46,17 @@ export const roomActions = [
   {
     key: 'delete-room',
     label: 'Delete room',
-    icon: <IconTrash className="text-slate-500" size={20} />,
+    icon: <Trash2 className="text-slate-500" size={20} />,
   },
   {
     key: 'add-activity',
     label: 'Add activity in room',
-    icon: <TbApps className="text-slate-500" size={20} />,
+    icon: <Apps className="text-slate-500" size={20} />,
   },
   {
     key: 'delete-room-activity',
     label: 'Remove activity from room',
-    icon: <TiDocumentDelete className="text-slate-500" size={20} />,
+    icon: <Trash2 className="text-slate-500" size={20} />,
   },
 ]
 
@@ -118,7 +116,7 @@ export function BreakoutRoomActivityCard({
           <DropdownActions
             triggerIcon={
               <Button isIconOnly variant="light" className="-mr-2.5">
-                <IoEllipsisVerticalOutline size={20} />
+                <MoreVertical size={20} />
               </Button>
             }
             actions={getActions()}
@@ -173,7 +171,7 @@ export function BreakoutRoomActivityCard({
                 className={cn('grid place-items-center gap-4', {
                   'gap-2': !editable,
                 })}>
-                <TbTriangleSquareCircleFilled
+                <CircleSquareTriangle
                   size={48}
                   className={cn({
                     'text-primary-300': editable,

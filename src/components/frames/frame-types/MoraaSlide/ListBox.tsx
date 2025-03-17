@@ -1,9 +1,10 @@
+
 /* eslint-disable react-refresh/only-export-components */
 import { useState } from 'react'
 
 import { Popover, PopoverContent, PopoverTrigger } from '@heroui/react'
 import { fabric } from 'fabric'
-import { IoListSharp } from 'react-icons/io5'
+import { List } from 'lucide-react'
 
 import { Tooltip } from '@/components/common/ShortuctTooltip'
 import { Button } from '@/components/ui/Button'
@@ -91,7 +92,7 @@ export function ListBox({
               className={cn('flex flex-col justify-center items-center gap-1', {
                 'bg-black text-white hover:bg-black hover:text-white': open,
               })}>
-              <IoListSharp size={18} />
+              <List size={18} />
               {!hideLabel && <span className="text-xs mt-1">List</span>}
             </Button>
           </PopoverTrigger>

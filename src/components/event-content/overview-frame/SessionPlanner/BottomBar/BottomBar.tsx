@@ -1,3 +1,4 @@
+
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import { Dispatch, SetStateAction, useState } from 'react'
@@ -12,11 +13,7 @@ import {
 } from '@heroui/react'
 import { motion } from 'framer-motion'
 import toast from 'react-hot-toast'
-import { AiOutlineClose } from 'react-icons/ai'
-import { BsTrash } from 'react-icons/bs'
-import { IoDuplicateOutline } from 'react-icons/io5'
-import { MdOutlineUnpublished } from 'react-icons/md'
-import { RiShare2Line } from 'react-icons/ri'
+import { Trash2, Copy, X, Share2, Ban } from 'lucide-react'
 import { v4 as uuidv4 } from 'uuid'
 
 import { CategoryChange } from './CategoryChange'
@@ -151,7 +148,7 @@ export function BottomBar({
             <div
               className="grid place-items-center h-full py-2 cursor-pointer gap-1"
               onClick={onDuplicate}>
-              <IoDuplicateOutline size={22} className="hover:text-primary" />
+              <Copy size={22} className="hover:text-primary" />
               <p className="text-xs">Duplicate</p>
             </div>
           </RenderIf>
@@ -162,19 +159,19 @@ export function BottomBar({
               setActionRunning(false)
               setShowDeleteModal(true)
             }}>
-            <BsTrash size={20} className="hover:text-primary" />
+            <Trash2 size={20} className="hover:text-primary" />
             <p className="text-xs">Delete</p>
           </div>
           <div
             className="grid place-items-center h-full py-2 cursor-pointer gap-1"
             onClick={() => changeFramesStatus(FrameStatus.PUBLISHED)}>
-            <RiShare2Line size={22} className="hover:text-primary" />
+            <Share2 size={22} className="hover:text-primary" />
             <p className="text-xs">Share</p>
           </div>
           <div
             className="grid place-items-center h-full py-2 cursor-pointer gap-1"
             onClick={() => changeFramesStatus(FrameStatus.DRAFT)}>
-            <MdOutlineUnpublished size={22} className="hover:text-primary" />
+            <Ban size={22} className="hover:text-primary" />
             <p className="text-xs">Unshare</p>
           </div>
 
@@ -193,7 +190,7 @@ export function BottomBar({
             onClick={() => {
               setSelectedFrameIds([])
             }}>
-            <AiOutlineClose size={24} />
+            <X size={24} />
           </div>
         </div>
       </motion.div>

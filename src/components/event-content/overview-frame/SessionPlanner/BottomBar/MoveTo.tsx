@@ -1,93 +1,115 @@
 
-import { useState } from 'react'
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+import { Dispatch, SetStateAction, useId, useState } from 'react'
 
 import {
+  Select,
+  SelectItem,
   Popover,
-  PopoverTrigger,
   PopoverContent,
-  Input,
-  Button,
+  PopoverTrigger,
 } from '@heroui/react'
-import { X } from 'lucide-react'
-import { MoveRight } from 'lucide-react'
+import { FolderUp } from 'lucide-react'
 
+import { useEventContext } from '@/contexts/EventContext'
 import { useStoreDispatch } from '@/hooks/useRedux'
-import { useEventSelector } from '@/stores/hooks/useEventSections'
-import { reorderFramesAction } from '@/stores/slices/event/current-event/section.slice'
+import { moveFramesThunk } from '@/stores/thunks/frame.thunks'
+
+interface IMoveToSection {
+  selectedFrameIds: string[]
+  setSelectedFrameIds: Dispatch<SetStateAction<string[]>>
+}
 
 export function MoveToSection({
   selectedFrameIds,
   setSelectedFrameIds,
-}: {
-  selectedFrameIds: string[]
-  setSelectedFrameIds: (ids: string[]) => void
-}) {
+}: IMoveToSection) {
+  const [open, setOpen] = useState(false)
+  const [selected, setSelected] = useState<string>('')
+  const { sections } = useEventContext()
   const dispatch = useStoreDispatch()
-  const [isOpen, setIsOpen] = useState(false)
-  const { sections } = useEventSelector()
-  const [search, setSearch] = useState('')
+  const sectionsId = useId()
 
-  const moveToSection = (movedToSectionId: string) => {
-    const destinationSection = sections.find(
-      (section) => section.id === movedToSectionId
-    )
-    dispatch(
-      reorderFramesAction({
-        frameIds: selectedFrameIds,
-        destinationSectionId: movedToSectionId,
-        destinationIndex: destinationSection?.frames.length || 0,
-      })
-    )
-    setSelectedFrameIds([])
+  const getSectionsList = () => {
+    if (!sections || !sections.length) return []
+
+    return sections.map((section) => ({
+      label: section.name,
+      value: section.id,
+    }))
   }
 
-  const getSections = () => {
-    if (!search) return sections
+  const getSectionName = (id: string) => {
+    if (!sections || !sections.length) return ''
 
-    return sections.filter(
-      (section) =>
-        section.name &&
-        section.name.toLowerCase().includes(search.toLowerCase())
+    return sections.find((section) => section.id === id)?.name || ''
+  }
+
+  const moveItems = (e: React.FormEvent) => {
+    e.preventDefault()
+
+    if (!selected) {
+      return
+    }
+
+    dispatch(
+      moveFramesThunk({
+        frameIds: selectedFrameIds,
+        toSectionId: selected,
+      })
     )
+
+    setSelectedFrameIds([])
+    setOpen(false)
   }
 
   return (
-    <Popover isOpen={isOpen} onOpenChange={(open) => setIsOpen(open)}>
+    <Popover
+      placement="bottom"
+      showArrow
+      offset={20}
+      isOpen={open}
+      onOpenChange={(open) => setOpen(open)}>
       <PopoverTrigger>
         <div className="grid place-items-center h-full py-2 cursor-pointer gap-1">
-          <MoveRight size={22} className="hover:text-primary" />
-          <p className="text-xs">Move to</p>
+          <FolderUp size={22} className="hover:text-primary" />
+          <p className="text-xs">Move</p>
         </div>
       </PopoverTrigger>
-      <PopoverContent className="py-4 px-4">
-        <div className="w-[300px]">
-          <div className="flex items-center justify-between">
-            <p>Choose section</p>
-            <X
-              onClick={() => setIsOpen(false)}
-              className="cursor-pointer"
-            />
-          </div>
-          <Input
-            type="text"
-            size="sm"
-            placeholder="Search section"
-            className="mt-2"
-            variant="bordered"
-            classNames={{ inputWrapper: 'border-1' }}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-          <div className="grid gap-1 mt-1">
-            {getSections().map((section) => (
-              <Button
-                size="sm"
-                variant="light"
-                className="justify-start pl-1.5"
-                onClick={() => moveToSection(section.id)}>
-                {section.name}
-              </Button>
-            ))}
-          </div>
+      <PopoverContent>
+        <div className="flex flex-col gap-2 px-2 py-1">
+          <p className="text-sm mb-2 font-medium text-center">
+            Move to another section
+          </p>
+          <form onSubmit={moveItems}>
+            <Select
+              labelPlacement="outside"
+              placeholder="Select a section to move to"
+              items={getSectionsList()}
+              size="sm"
+              className="mb-2"
+              selectedKeys={selected ? [selected] : []}
+              onChange={(e) => setSelected(e.target.value)}>
+              {(section) => (
+                <SelectItem key={section.value} value={section.value}>
+                  {section.label}
+                </SelectItem>
+              )}
+            </Select>
+            <p className="text-xs mb-1">
+              {!!selected &&
+                `${selectedFrameIds.length} ${
+                  selectedFrameIds.length === 1 ? 'frame' : 'frames'
+                } will be moved to ${getSectionName(selected)}`}
+            </p>
+            <button
+              className="w-full py-2 rounded-md bg-primary text-white"
+              type="submit">
+              Move
+            </button>
+          </form>
         </div>
       </PopoverContent>
     </Popover>

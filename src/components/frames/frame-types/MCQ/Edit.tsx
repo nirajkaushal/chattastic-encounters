@@ -1,10 +1,11 @@
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef, useState } from 'react'
 
 import { Radio, RadioGroup } from '@heroui/react'
 import { useThrottle } from '@uidotdev/usehooks'
 import isEqual from 'lodash.isequal'
-import { BsTrash3 } from 'react-icons/bs'
+import { Trash2 } from 'lucide-react'
 import ReactTextareaAutosize from 'react-textarea-autosize'
 import { v4 as uuidv4 } from 'uuid'
 
@@ -167,7 +168,7 @@ export function McqEditor({ frame: frameFromRemote }: EditProps) {
                       />
                     </div>
                     <div className="flex items-center gap-4 opacity-100 group-hover/poll:opacity-100 duration-100">
-                      <BsTrash3
+                      <Trash2
                         onClick={() => deleteOption(index)}
                         className="text-black/25 hover:text-black/50 text-lg cursor-pointer"
                       />

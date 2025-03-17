@@ -1,5 +1,6 @@
+
 import { Tab, Tabs } from '@heroui/react'
-import { BsGrid, BsList } from 'react-icons/bs'
+import { Grid, List } from 'lucide-react'
 
 import { Tooltip } from '../ShortuctTooltip'
 
@@ -28,7 +29,7 @@ export function ListViewToggle() {
             label={KeyboardShortcuts['Agenda Panel'].grid.label}
             actionKey={KeyboardShortcuts['Agenda Panel'].grid.key}>
             <div className="h-full grid place-items-center">
-              <BsGrid size={12} />
+              <Grid size={12} />
             </div>
           </Tooltip>
         }
@@ -40,7 +41,7 @@ export function ListViewToggle() {
             label={KeyboardShortcuts['Agenda Panel'].list.label}
             actionKey={KeyboardShortcuts['Agenda Panel'].list.key}>
             <div className="h-full grid place-items-center">
-              <BsList size={12} />
+              <List size={12} />
             </div>
           </Tooltip>
         }

@@ -1,8 +1,9 @@
+
 import { useState } from 'react'
 
 import { Popover, PopoverTrigger, PopoverContent, Button } from '@heroui/react'
-import { AiOutlineClose } from 'react-icons/ai'
-import { LuTag } from 'react-icons/lu'
+import { X } from 'lucide-react'
+import { Tag } from 'lucide-react'
 
 import { useEventContext } from '@/contexts/EventContext'
 import { useStoreDispatch } from '@/hooks/useRedux'
@@ -48,7 +49,7 @@ export function CategoryChange({
     <Popover isOpen={isOpen} onOpenChange={(open) => setIsOpen(open)}>
       <PopoverTrigger>
         <div className="grid place-items-center h-full py-2 cursor-pointer gap-1">
-          <LuTag size={22} rotate={180} className="hover:text-primary" />
+          <Tag size={22} className="hover:text-primary rotate-180" />
           <p className="text-xs">Category</p>
         </div>
       </PopoverTrigger>
@@ -56,7 +57,8 @@ export function CategoryChange({
         <div className="w-[200px]">
           <div className="flex items-center justify-between pl-2">
             <p>Choose category</p>
-            <AiOutlineClose
+            <X
+              size={18}
               onClick={() => setIsOpen(false)}
               className="cursor-pointer"
             />

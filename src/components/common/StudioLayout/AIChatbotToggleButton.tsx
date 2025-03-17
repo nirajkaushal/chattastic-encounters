@@ -1,5 +1,6 @@
+
 import { useHotkeys } from 'react-hotkeys-hook'
-import { HiSparkles } from 'react-icons/hi2'
+import { Sparkles } from 'lucide-react'
 
 import { Tooltip } from '../ShortuctTooltip'
 
@@ -35,7 +36,7 @@ export function ToggleButton() {
         variant="light"
         color="primary"
         className="!bg-transparent">
-        <HiSparkles size={24} className="hover:text-yellow-500" />
+        <Sparkles size={24} className="hover:text-yellow-500" />
       </Button>
     </Tooltip>
   )

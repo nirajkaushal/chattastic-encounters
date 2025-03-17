@@ -1,4 +1,5 @@
-import { RxCursorArrow } from 'react-icons/rx'
+
+import { MousePointer } from 'lucide-react'
 
 import { HeaderButton } from './HeaderButton'
 
@@ -19,7 +20,7 @@ export function Select() {
       tooltipContent="Select"
       label="Select"
       active={canvas.selection}
-      icon={<RxCursorArrow />}
+      icon={<MousePointer size={18} />}
       onClick={handleSelect}
     />
   )

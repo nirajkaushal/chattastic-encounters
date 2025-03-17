@@ -1,4 +1,5 @@
-import { IoSettings, IoSettingsOutline } from 'react-icons/io5'
+
+import { Settings } from 'lucide-react'
 import { useDispatch } from 'react-redux'
 
 import { Tooltip } from '../ShortuctTooltip'
@@ -33,7 +34,7 @@ export function FrameSettingsToggleButton() {
           'text-primary': isVisible,
         })}
         onClick={toggleSidebar}>
-        {isVisible ? <IoSettings size={20} /> : <IoSettingsOutline size={20} />}
+        <Settings size={20} strokeWidth={isVisible ? 2.5 : 1.5} />
       </Button>
     </Tooltip>
   )

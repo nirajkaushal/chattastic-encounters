@@ -1,7 +1,8 @@
+
 import { useCallback } from 'react'
 
 import { Button, Popover, PopoverContent, PopoverTrigger } from '@heroui/react'
-import { IoChevronDown } from 'react-icons/io5'
+import { ChevronDown } from 'lucide-react'
 
 import {
   DropdownButton,
@@ -55,7 +56,7 @@ export function FontFamilyPicker({ onChange, value }: FontFamilyPickerProps) {
   return (
     <Popover placement="bottom">
       <PopoverTrigger>
-        <Button className="h-8 bg-gray-200" endContent={<IoChevronDown />}>
+        <Button className="h-8 bg-gray-200" endContent={<ChevronDown size={16} />}>
           {currentFontLabel}
         </Button>
       </PopoverTrigger>

@@ -1,4 +1,5 @@
-import { HiColorSwatch, HiOutlineColorSwatch } from 'react-icons/hi'
+
+import { Palette } from 'lucide-react'
 import { useDispatch } from 'react-redux'
 
 import { Tooltip } from '../ShortuctTooltip'
@@ -35,11 +36,7 @@ export function FrameAppearanceToggleButton() {
           'text-primary': isVisible,
         })}
         onClick={toggleSidebar}>
-        {isVisible ? (
-          <HiColorSwatch size={18} />
-        ) : (
-          <HiOutlineColorSwatch size={18} />
-        )}
+        <Palette size={18} strokeWidth={isVisible ? 2.5 : 1.5} />
       </Button>
     </Tooltip>
   )

@@ -1,21 +1,21 @@
+
 import { useCallback } from 'react'
 
 import { Button, Popover, PopoverContent, PopoverTrigger } from '@heroui/react'
-import { BsFonts } from 'react-icons/bs'
-import { IoChevronDown } from 'react-icons/io5'
+import { Text, ChevronDown } from 'lucide-react'
 
 import { DropdownButton } from '@/components/tiptap/ui/Dropdown'
 
 const FONT_SIZES = [
-  { key: 'smaller', label: 'Smaller', value: '12px', icon: <BsFonts /> },
-  { key: 'small', label: 'Small', value: '14px', icon: <BsFonts /> },
-  { key: 'medium', label: 'Medium', value: '', icon: <BsFonts /> },
-  { key: 'large', label: 'Large', value: '18px', icon: <BsFonts /> },
+  { key: 'smaller', label: 'Smaller', value: '12px', icon: <Text size={14} /> },
+  { key: 'small', label: 'Small', value: '14px', icon: <Text size={14} /> },
+  { key: 'medium', label: 'Medium', value: '', icon: <Text size={14} /> },
+  { key: 'large', label: 'Large', value: '18px', icon: <Text size={14} /> },
   {
     key: 'extra-large',
     label: 'Extra Large',
     value: '24px',
-    icon: <BsFonts />,
+    icon: <Text size={14} />,
   },
 ]
 
@@ -36,7 +36,7 @@ export function FontSizePicker({ onChange, value }: FontSizePickerProps) {
   return (
     <Popover placement="bottom">
       <PopoverTrigger>
-        <Button className="h-8 bg-gray-200" endContent={<IoChevronDown />}>
+        <Button className="h-8 bg-gray-200" endContent={<ChevronDown size={16} />}>
           {currentSizeLabel}
         </Button>
       </PopoverTrigger>

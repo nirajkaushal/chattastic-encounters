@@ -1,4 +1,5 @@
-import { LuGalleryVertical } from 'react-icons/lu'
+
+import { GalleryVertical } from 'lucide-react'
 
 import { ControlButton } from '../common/ControlButton'
 
@@ -24,7 +25,7 @@ export function LobbyViewToggle() {
       onClick={() => {
         dispatch(updateEventSessionModeAction(EventSessionMode.LOBBY))
       }}>
-      <LuGalleryVertical size={20} />
+      <GalleryVertical size={20} />
     </ControlButton>
   )
 }

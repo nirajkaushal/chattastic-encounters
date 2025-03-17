@@ -1,8 +1,8 @@
+
 import { useContext } from 'react'
 
 import { Button } from '@heroui/react'
-import { IconArrowDown, IconArrowUp, IconTrash } from '@tabler/icons-react'
-import { BsThreeDotsVertical } from 'react-icons/bs'
+import { ArrowDown, ArrowUp, Trash, MoreVertical } from 'lucide-react'
 
 import { DropdownActions } from './DropdownActions'
 
@@ -15,17 +15,17 @@ const sectionDropdownActions = [
   {
     key: 'delete',
     label: 'Delete',
-    icon: <IconTrash className="h-4 w-4 text-red-500" />,
+    icon: <Trash className="h-4 w-4 text-red-500" />,
   },
   {
     key: 'move-up',
     label: 'Move up',
-    icon: <IconArrowUp className="h-4 w-4 text-slate-500" />,
+    icon: <ArrowUp className="h-4 w-4 text-slate-500" />,
   },
   {
     key: 'move-down',
     label: 'Move down',
-    icon: <IconArrowDown className="h-4 w-4 text-slate-500" />,
+    icon: <ArrowDown className="h-4 w-4 text-slate-500" />,
   },
 ]
 
@@ -50,7 +50,7 @@ export function SectionDropdownActions({
     <DropdownActions
       triggerIcon={
         <Button isIconOnly size="sm" variant="light" radius="full">
-          <BsThreeDotsVertical />
+          <MoreVertical size={18} />
         </Button>
       }
       actions={sectionDropdownActions}

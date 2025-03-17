@@ -1,7 +1,8 @@
+
 /* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import { motion } from 'framer-motion'
-import { IoIosClose } from 'react-icons/io'
+import { X } from 'lucide-react'
 
 import { RenderIf } from '../common/RenderIf/RenderIf'
 
@@ -47,7 +48,7 @@ export function CustomToast({
       <button
         className="absolute h-6 w-6 -right-2 -top-2 bg-white shadow-lg rounded-full flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity"
         onClick={onClose}>
-        <IoIosClose size={28} />
+        <X size={20} />
       </button>
     </motion.div>
   )

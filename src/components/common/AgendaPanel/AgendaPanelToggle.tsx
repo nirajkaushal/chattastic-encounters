@@ -1,4 +1,5 @@
-import { GoSidebarCollapse } from 'react-icons/go'
+
+import { SidebarClose } from 'lucide-react'
 
 import { Tooltip } from '../ShortuctTooltip'
 
@@ -26,9 +27,9 @@ function AgendaPanelToggle({
         variant="light"
         onClick={onToggle}>
         {!collapsed ? (
-          <GoSidebarCollapse size={20} className="rotate-180" />
+          <SidebarClose size={20} className="rotate-180" />
         ) : (
-          <GoSidebarCollapse size={20} />
+          <SidebarClose size={20} />
         )}
       </Button>
     </Tooltip>

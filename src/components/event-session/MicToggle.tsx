@@ -1,6 +1,7 @@
+
 import { useDyteSelector } from '@dytesdk/react-web-core'
 import { useHotkeys } from 'react-hotkeys-hook'
-import { IoMicOff, IoMicOutline } from 'react-icons/io5'
+import { Mic, MicOff } from 'lucide-react'
 
 import { ControlButton } from '../common/ControlButton'
 
@@ -76,7 +77,7 @@ export function MicToggle({
       }}
       tooltipProps={getTooltipProps()}
       onClick={handleMic}>
-      {isMicEnabled ? <IoMicOutline size={18} /> : <IoMicOff size={18} />}
+      {isMicEnabled ? <Mic size={18} /> : <MicOff size={18} />}
     </ControlButton>
   )
 }

@@ -1,5 +1,6 @@
+
 import { Button } from '@heroui/react'
-import { BiDotsHorizontalRounded } from 'react-icons/bi'
+import { MoreHorizontal } from 'lucide-react'
 
 import { useStoreDispatch, useStoreSelector } from '@/hooks/useRedux'
 import { setContentStudioRightSidebarAction } from '@/stores/slices/layout/studio.slice'
@@ -26,7 +27,7 @@ export function BubbleMenuMoreOptions() {
 
         dispatch(setContentStudioRightSidebarAction('frame-appearance'))
       }}>
-      <BiDotsHorizontalRounded size={16} />
+      <MoreHorizontal size={16} />
     </Button>
   )
 }

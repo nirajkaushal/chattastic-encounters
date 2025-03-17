@@ -1,3 +1,4 @@
+
 import { useState } from 'react'
 
 import {
@@ -6,7 +7,7 @@ import {
   DropdownMenu,
   DropdownTrigger,
 } from '@heroui/react'
-import { LuSettings2, LuUser2 } from 'react-icons/lu'
+import { Settings2, User2 } from 'lucide-react'
 
 import { Button } from '@/components/ui/Button'
 import { cn } from '@/utils/utils'
@@ -23,13 +24,13 @@ export function PollConfigs() {
             active: open,
           })}
           isIconOnly>
-          {open ? <LuSettings2 size={18} /> : <LuSettings2 size={18} />}
+          <Settings2 size={18} />
         </Button>
       </DropdownTrigger>
       <DropdownMenu>
         <DropdownItem
           key="multiple-responses"
-          startContent={<LuUser2 />}
+          startContent={<User2 size={18} />}
           onClick={() => {}}>
           Allow multiple responses
         </DropdownItem>

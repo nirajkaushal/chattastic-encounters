@@ -1,4 +1,5 @@
-import { IoSettingsOutline } from 'react-icons/io5'
+
+import { Settings } from 'lucide-react'
 
 import { ControlButton } from '@/components/common/ControlButton'
 import { useEventSession } from '@/contexts/EventSessionContext'
@@ -31,7 +32,7 @@ export function SettingsToggle({ showLabel }: SettingsToggleProps) {
           active: isSettingsModelOpen,
         }),
         startContent: (
-          <IoSettingsOutline
+          <Settings
             size={16}
             className={cn({
               'text-primary-500': isSettingsModelOpen,

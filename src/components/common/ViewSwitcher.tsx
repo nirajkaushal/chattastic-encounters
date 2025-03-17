@@ -1,5 +1,6 @@
+
 import { Tab, Tabs } from '@heroui/react'
-import { BsGrid, BsList } from 'react-icons/bs'
+import { Grid, List } from 'lucide-react'
 
 export type ViewTypes = 'grid' | 'list'
 
@@ -23,8 +24,8 @@ export function ViewSwitcher({
         tabContent: 'group-data-[selected=true]:text-primary',
         tab: 'p-2.5 data-[focus-visible=true]:outline-0',
       }}>
-      <Tab key="grid" title={<BsGrid size={16} />} />
-      <Tab key="list" title={<BsList size={16} />} />
+      <Tab key="grid" title={<Grid size={16} />} />
+      <Tab key="list" title={<List size={16} />} />
     </Tabs>
   )
 }

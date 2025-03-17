@@ -1,5 +1,6 @@
+
 import { useHotkeys } from 'react-hotkeys-hook'
-import { RiTableView } from 'react-icons/ri'
+import { Table } from 'lucide-react'
 
 import { ControlButton } from './ControlButton'
 
@@ -26,7 +27,7 @@ export function SessionPlannerToggle() {
           active: isSessionPlannerOpen,
         }),
         startContent: (
-          <RiTableView
+          <Table
             size={20}
             className={cn({
               'text-primary': isSessionPlannerOpen,

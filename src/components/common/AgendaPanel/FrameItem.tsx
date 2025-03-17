@@ -1,10 +1,11 @@
+
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useEffect, useRef, useState } from 'react'
 
 import { Badge } from '@heroui/react'
 import { useNavigate, useRouter } from '@tanstack/react-router'
-import { RxDotsVertical } from 'react-icons/rx'
+import { MoreVertical } from 'lucide-react'
 
 import { ActiveBreakoutIndicator } from './ActiveBreakoutIndicator'
 import { AddItemBar } from './AddItemBar'
@@ -271,7 +272,7 @@ export function FrameItem({
                 frameType={frame.type}
                 triggerIcon={
                   <div className="cursor-pointer">
-                    <RxDotsVertical />
+                    <MoreVertical size={18} />
                   </div>
                 }
                 handleActions={handleFrameAction}

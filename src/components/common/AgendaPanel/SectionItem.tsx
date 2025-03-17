@@ -1,9 +1,10 @@
+
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useState } from 'react'
 
 import { Chip } from '@heroui/react'
-import { IoChevronForward } from 'react-icons/io5'
+import { ChevronRight } from 'lucide-react'
 
 import { AddItemBar } from './AddItemBar'
 import { FrameList } from './FrameList'
@@ -144,7 +145,8 @@ export function SectionItem({
           <div
             className="flex justify-start items-center flex-auto gap-2 h-8 border-0 rounded-md"
             onClick={handleExpandSection}>
-            <IoChevronForward
+            <ChevronRight
+              size={18}
               className={cn('duration-300 shrink-0 cursor-pointer', {
                 'rotate-90': sectionExpanded,
               })}
@@ -190,7 +192,8 @@ export function SectionItem({
         <div
           className={cn('flex gap-1.5 items-center py-1')}
           onClick={handleSectionClick}>
-          <IoChevronForward
+          <ChevronRight
+            size={18}
             className={cn('duration-300 shrink-0 cursor-pointer', {
               'rotate-90 text-primary': sectionExpanded,
             })}

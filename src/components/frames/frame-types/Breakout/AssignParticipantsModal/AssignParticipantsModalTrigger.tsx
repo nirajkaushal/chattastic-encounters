@@ -1,7 +1,8 @@
+
 import { useState } from 'react'
 
 import { ButtonProps } from '@heroui/button'
-import { PiUsersThree } from 'react-icons/pi'
+import { Users } from 'lucide-react'
 
 import { AssignParticipantsModal } from './AssignParticipantsModal'
 
@@ -21,7 +22,7 @@ export function AssignParticipantsModalTrigger({
   return (
     <>
       <Button isIconOnly onPress={() => setOpen(true)} {...triggerProps}>
-        {children ?? <PiUsersThree size={18} />}
+        {children ?? <Users size={18} />}
       </Button>
       <AssignParticipantsModal open={open} setOpen={setOpen} />
     </>

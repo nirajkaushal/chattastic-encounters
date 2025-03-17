@@ -1,6 +1,7 @@
+
 import { useContext } from 'react'
 
-import { LuRedo, LuUndo } from 'react-icons/lu'
+import { Redo, Undo } from 'lucide-react'
 
 import { HeaderButton } from './HeaderButton'
 
@@ -30,7 +31,7 @@ export function HistoryControls({
         size={small ? 'sm' : 'lg'}
         tooltipContent="Undo"
         label={!hideLabel ? 'Undo' : ''}
-        icon={<LuUndo size={18} />}
+        icon={<Undo size={18} />}
         onClick={() => {
           history.undo()
         }}
@@ -39,7 +40,7 @@ export function HistoryControls({
         size={small ? 'sm' : 'lg'}
         tooltipContent="Redo"
         label={!hideLabel ? 'Redo' : ''}
-        icon={<LuRedo size={18} />}
+        icon={<Redo size={18} />}
         onClick={() => {
           history.redo()
         }}

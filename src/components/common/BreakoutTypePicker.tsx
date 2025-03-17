@@ -12,9 +12,7 @@ import {
   CardBody,
   ModalFooter,
 } from '@heroui/react'
-import { BsCircleSquare } from 'react-icons/bs'
-import { FaPeopleGroup } from 'react-icons/fa6'
-import { LuSquareStack } from 'react-icons/lu'
+import { BoxSelect, Layers, Users } from 'lucide-react'
 
 import { NumberInput } from './NumberInput'
 import {
@@ -49,7 +47,7 @@ export enum BREAKOUT_TYPES {
 export const breakoutTypes: IBreakoutType[] = [
   {
     name: 'Groups',
-    icon: <FaPeopleGroup size={32} />,
+    icon: <Users size={32} />,
     description:
       'Split up participants into randomised groups automatically with no of participants per group',
     breakoutType: BREAKOUT_TYPES.GROUPS,
@@ -57,7 +55,7 @@ export const breakoutTypes: IBreakoutType[] = [
   },
   {
     name: 'Rooms',
-    icon: <LuSquareStack size={32} />,
+    icon: <Layers size={32} />,
     description:
       'You can allocate participants or let them choose based on the specific no of rooms',
     breakoutType: BREAKOUT_TYPES.ROOMS,
@@ -127,7 +125,7 @@ export function BreakoutTypePicker({
                 <div className="flex items-center gap-2">
                   <span className="p-1 rounded-full bg-[#FCFAFF] flex items-center justify-center">
                     <span className="p-2 bg-[#E9D8FD] flex items-center rounded-full text-[#6947C3]">
-                      <BsCircleSquare height={36} width={36} />
+                      <BoxSelect size={24} />
                     </span>
                   </span>
                   <h3 className="font-semibold text-xl text-black">

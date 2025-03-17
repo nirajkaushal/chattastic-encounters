@@ -1,6 +1,7 @@
+
 import { Button } from '@heroui/react'
 import { fabric } from 'fabric'
-import { LiaObjectGroup, LiaObjectUngroup } from 'react-icons/lia'
+import { Group, Ungroup } from 'lucide-react'
 
 export function GroupBubbleMenu({ canvas }: { canvas: fabric.Canvas }) {
   const activeObject = canvas.getActiveObject() as fabric.Textbox
@@ -19,7 +20,7 @@ export function GroupBubbleMenu({ canvas }: { canvas: fabric.Canvas }) {
           canvas.renderAll()
           canvas.fire('object:modified', { target: activeObject })
         }}>
-        <LiaObjectGroup size={16} />
+        <Group size={16} />
       </Button>
       <Button
         size="sm"
@@ -34,7 +35,7 @@ export function GroupBubbleMenu({ canvas }: { canvas: fabric.Canvas }) {
           canvas.renderAll()
           canvas.fire('object:modified', { target: activeObject })
         }}>
-        <LiaObjectUngroup size={16} />
+        <Ungroup size={16} />
       </Button>
     </div>
   )

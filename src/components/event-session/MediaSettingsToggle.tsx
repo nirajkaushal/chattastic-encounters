@@ -1,5 +1,6 @@
+
 import { ButtonProps } from '@heroui/button'
-import { LuSettings } from 'react-icons/lu'
+import { Settings } from 'lucide-react'
 
 import { ControlButton } from '../common/ControlButton'
 
@@ -24,7 +25,7 @@ export function MediaSettingsToggle({
         label: 'Setting',
       }}
       onClick={onClick}>
-      <LuSettings size={20} />
+      <Settings size={20} />
       {label}
     </ControlButton>
   )

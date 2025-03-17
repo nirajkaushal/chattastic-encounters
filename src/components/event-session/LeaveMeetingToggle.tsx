@@ -1,8 +1,9 @@
+
 import { useState } from 'react'
 
 import { DyteDialogManager } from '@dytesdk/react-ui-kit'
 import { useDyteMeeting } from '@dytesdk/react-web-core'
-import { TbDoorExit } from 'react-icons/tb'
+import { DoorOpen } from 'lucide-react'
 
 import { ControlButton } from '../common/ControlButton'
 
@@ -28,7 +29,7 @@ export function LeaveMeetingToggle({ showLabel }: LeaveMeetingToggleProps) {
           variant: 'flat',
           className: cn('transition-all duration-300 bg-red-500 text-white'),
           isIconOnly: !showLabel,
-          startContent: <TbDoorExit size={16} className="text-white" />,
+          startContent: <DoorOpen size={16} className="text-white" />,
         }}
         tooltipProps={{
           label: 'Leave meeting',

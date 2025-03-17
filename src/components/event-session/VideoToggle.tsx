@@ -1,6 +1,7 @@
+
 import { useDyteSelector } from '@dytesdk/react-web-core'
 import { useHotkeys } from 'react-hotkeys-hook'
-import { BsCameraVideo, BsFillCameraVideoOffFill } from 'react-icons/bs'
+import { Video, VideoOff } from 'lucide-react'
 
 import { ControlButton } from '../common/ControlButton'
 
@@ -50,9 +51,9 @@ export function VideoToggle({ className = '' }: { className?: string }) {
       }}
       onClick={handleVideo}>
       {isVideoEnabled ? (
-        <BsCameraVideo size={18} />
+        <Video size={18} />
       ) : (
-        <BsFillCameraVideoOffFill size={18} />
+        <VideoOff size={18} />
       )}
     </ControlButton>
   )

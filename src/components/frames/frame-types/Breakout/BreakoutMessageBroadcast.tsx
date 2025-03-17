@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react'
 
 import { useDyteSelector } from '@dytesdk/react-web-core'
@@ -11,8 +12,8 @@ import {
   Textarea,
   Tooltip,
 } from '@heroui/react'
-import toast from 'react-hot-toast'
-import { PiTelegramLogoLight } from 'react-icons/pi'
+import { toast } from 'react-hot-toast'
+import { SendHorizonal } from 'lucide-react'
 
 import { useRealtimeChannel } from '@/contexts/RealtimeChannelContext'
 import { useStoreSelector } from '@/hooks/useRedux'
@@ -64,7 +65,7 @@ export function BreakoutMessageBroadcast() {
           size="sm"
           onClick={() => setIsMessageModalOpen(true)}>
           Broadcast Message
-          <PiTelegramLogoLight fontSize={18} />
+          <SendHorizonal fontSize={18} />
         </Button>
       </Tooltip>
       <Modal

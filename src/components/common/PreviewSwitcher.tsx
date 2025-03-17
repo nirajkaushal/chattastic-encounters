@@ -1,9 +1,10 @@
+
 import { ReactNode, useContext } from 'react'
 
 import { Switch, Tab, Tabs } from '@heroui/react'
 import { useRouter } from '@tanstack/react-router'
 import { useHotkeys } from 'react-hotkeys-hook'
-import { TbEye, TbPencil } from 'react-icons/tb'
+import { Eye, PenTool } from 'lucide-react'
 import { useDispatch } from 'react-redux'
 
 import { EventContext } from '@/contexts/EventContext'
@@ -79,11 +80,11 @@ export function PreviewSwitcher() {
       }}>
       <Tab
         key="edit"
-        title={<Title icon={<TbPencil size={18} />} title="Edit" />}
+        title={<Title icon={<PenTool size={18} />} title="Edit" />}
       />
       <Tab
         key="view"
-        title={<Title icon={<TbEye size={18} />} title="View" />}
+        title={<Title icon={<Eye size={18} />} title="View" />}
       />
     </Tabs>
   )

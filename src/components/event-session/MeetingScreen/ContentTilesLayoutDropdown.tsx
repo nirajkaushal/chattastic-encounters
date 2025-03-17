@@ -1,3 +1,4 @@
+
 import { useState } from 'react'
 
 import {
@@ -7,10 +8,10 @@ import {
   DropdownSection,
   DropdownTrigger,
 } from '@heroui/react'
-import { BsLayoutSidebarInsetReverse } from 'react-icons/bs'
-import { LuLayoutDashboard } from 'react-icons/lu'
-import { MdSettingsSuggest } from 'react-icons/md'
-import { TbLayoutGridFilled } from 'react-icons/tb'
+import { LayoutSidebar } from 'lucide-react'
+import { LayoutDashboard } from 'lucide-react'
+import { Settings } from 'lucide-react'
+import { LayoutGrid } from 'lucide-react'
 
 import { Button } from '@/components/ui/Button'
 import { useStoreDispatch, useStoreSelector } from '@/hooks/useRedux'
@@ -43,7 +44,7 @@ export function ContentTilesLayoutDropdown({
           className={cn('live-button', {
             active: open,
           })}
-          startContent={<LuLayoutDashboard size={16} />}
+          startContent={<LayoutDashboard size={16} />}
           variant="light">
           {showLabel ? 'Layout' : null}
         </Button>
@@ -54,7 +55,7 @@ export function ContentTilesLayoutDropdown({
             key="spotlight"
             description="Tiles will overlay the frame"
             // shortcut="⌘N"
-            startContent={<TbLayoutGridFilled size={48} />}
+            startContent={<LayoutGrid size={48} />}
             className={cn('mb-2', {
               'bg-primary-100 border-primary-200':
                 layout === ContentTilesLayout.Spotlight,
@@ -73,7 +74,7 @@ export function ContentTilesLayoutDropdown({
             key="sidebar"
             description="Tiles will be displayed on the sidebar"
             // shortcut="⌘C"
-            startContent={<BsLayoutSidebarInsetReverse size={48} />}
+            startContent={<LayoutSidebar size={48} />}
             className={cn('mb-2', {
               'bg-primary-100 border-primary-200':
                 layout === ContentTilesLayout.Sidebar ||
@@ -94,7 +95,7 @@ export function ContentTilesLayoutDropdown({
             description="Tiles will be displayed on the topbar"
             // shortcut="⌘⇧E"
             startContent={
-              <BsLayoutSidebarInsetReverse className="-rotate-90" size={48} />
+              <LayoutSidebar className="-rotate-90" size={48} />
             }
             className={cn({
               'bg-primary-100 border-primary-200':
@@ -116,7 +117,7 @@ export function ContentTilesLayoutDropdown({
             key="open-modal"
             description="You can change more options"
             // shortcut="⌘⇧D"
-            startContent={<MdSettingsSuggest size={48} />}
+            startContent={<Settings size={48} />}
             onPress={() => {
               dispatch(openChangeContentTilesLayoutModalAction())
             }}>

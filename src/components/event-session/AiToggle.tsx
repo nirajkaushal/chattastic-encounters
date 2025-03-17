@@ -1,5 +1,6 @@
+
 import { useHotkeys } from 'react-hotkeys-hook'
-import { IoSparklesOutline } from 'react-icons/io5'
+import { Sparkles } from 'lucide-react'
 
 import { ControlButton } from '../common/ControlButton'
 
@@ -29,7 +30,7 @@ export function AiToggle({
         content: isAiSidebarOpen ? 'Close AI Copilot' : 'AI Copilot',
       }}
       onClick={onClick}>
-      <IoSparklesOutline size={20} />
+      <Sparkles size={20} />
     </ControlButton>
   )
 }

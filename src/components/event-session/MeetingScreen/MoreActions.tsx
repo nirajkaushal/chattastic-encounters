@@ -1,3 +1,4 @@
+
 import { useState } from 'react'
 
 import { useDyteMeeting } from '@dytesdk/react-web-core'
@@ -8,10 +9,8 @@ import {
   DropdownTrigger,
   useDisclosure,
 } from '@heroui/react'
-import toast from 'react-hot-toast'
-import { HiDotsVertical } from 'react-icons/hi'
-import { IoSettingsOutline, IoVolumeMuteOutline } from 'react-icons/io5'
-import { LuUserPlus2 } from 'react-icons/lu'
+import { toast } from 'react-hot-toast'
+import { MoreVertical, UserPlus2, Settings, VolumeX } from 'lucide-react'
 
 import { AddParticipantsButtonWithModal } from '@/components/common/AddParticipantsButtonWithModal'
 import { Button } from '@/components/ui/Button'
@@ -51,7 +50,7 @@ export function MoreActions() {
       items.push(
         <DropdownItem
           key="add-participants"
-          startContent={<LuUserPlus2 />}
+          startContent={<UserPlus2 />}
           onClick={() => {
             addParticipantsDisclosure.onOpen()
           }}>
@@ -61,7 +60,7 @@ export function MoreActions() {
       items.push(
         <DropdownItem
           key="mute-participants"
-          startContent={<IoVolumeMuteOutline />}
+          startContent={<VolumeX />}
           onClick={handleMicDisable}>
           Mute all participants
         </DropdownItem>
@@ -71,7 +70,7 @@ export function MoreActions() {
     items.push(
       <DropdownItem
         key="change-layout"
-        startContent={<IoSettingsOutline />}
+        startContent={<Settings />}
         onClick={() => {
           dispatch(openChangeContentTilesLayoutModalAction())
         }}>
@@ -82,7 +81,7 @@ export function MoreActions() {
     items.push(
       <DropdownItem
         key="settings"
-        startContent={<IoSettingsOutline />}
+        startContent={<Settings />}
         onClick={() => {
           setDyteStates((prevDyteStates) => ({
             ...prevDyteStates,
@@ -106,7 +105,7 @@ export function MoreActions() {
               active: open,
             })}
             isIconOnly>
-            <HiDotsVertical size={18} />
+            <MoreVertical size={18} />
           </Button>
         </DropdownTrigger>
         <DropdownMenu>{renderMenuItems()}</DropdownMenu>

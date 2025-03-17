@@ -1,3 +1,4 @@
+
 import { KeyboardEvent, useContext, useState } from 'react'
 
 import {
@@ -8,7 +9,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@heroui/react'
-import { AiOutlineClose } from 'react-icons/ai'
+import { X } from 'lucide-react'
 
 import { RenderIf } from '@/components/common/RenderIf/RenderIf'
 import { EventContext } from '@/contexts/EventContext'
@@ -176,7 +177,7 @@ export function Tags({
               base: 'bg-primary/10 rounded-md gap-2',
               content: 'text-primary',
             }}
-            endContent={!preview ? <AiOutlineClose size={10} /> : <p />}>
+            endContent={!preview ? <X size={10} /> : <p />}>
             {frameTag}
           </Chip>
         ))}

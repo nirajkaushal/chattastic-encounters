@@ -1,13 +1,7 @@
+
 import { Accordion, AccordionItem } from '@heroui/react'
 import { useLocation, useRouter } from '@tanstack/react-router'
-import { IconType } from 'react-icons'
-import { GoHome, GoHomeFill } from 'react-icons/go'
-import {
-  IoHelpCircleOutline,
-  IoHelpCircleSharp,
-  IoLibrary,
-  IoLibraryOutline,
-} from 'react-icons/io5'
+import { Home, Library, HelpCircle } from 'lucide-react'
 
 import { Button } from '../ui/Button'
 
@@ -16,8 +10,8 @@ import { cn } from '@/utils/utils'
 type TNavigation = {
   name: string
   href: string
-  icon: IconType
-  filled: IconType
+  icon: typeof Home
+  filled: typeof Home
   submenu?: Omit<TNavigation, 'filled' | 'icon' | 'submenu'>[]
 }
 
@@ -25,8 +19,8 @@ const navigation: TNavigation[] = [
   {
     name: 'Home',
     href: '/events',
-    icon: GoHome,
-    filled: GoHomeFill,
+    icon: Home,
+    filled: Home,
   },
   // {
   //   name: 'My workshops',
@@ -36,8 +30,8 @@ const navigation: TNavigation[] = [
   {
     name: 'My Library',
     href: '/library',
-    icon: IoLibraryOutline,
-    filled: IoLibrary,
+    icon: Library,
+    filled: Library,
     submenu: [
       {
         name: 'Frames',
@@ -57,8 +51,8 @@ const navigation: TNavigation[] = [
   {
     name: 'Help & Support',
     href: '/help',
-    icon: IoHelpCircleOutline,
-    filled: IoHelpCircleSharp,
+    icon: HelpCircle,
+    filled: HelpCircle,
   },
 ]
 
@@ -67,6 +61,10 @@ export function SidebarItem() {
   const { history } = useRouter()
 
   const renderMenuItem = (item: TNavigation) => {
+    const IconComponent = location.pathname.startsWith(item.href) 
+      ? item.filled 
+      : item.icon;
+      
     if (item.submenu) {
       return (
         <Accordion
@@ -82,15 +80,11 @@ export function SidebarItem() {
               title: 'text-sm',
             }}
             startContent={
-              location.pathname.startsWith(item.href) ? (
-                <item.filled
-                  className="shrink-0"
-                  aria-hidden="true"
-                  size={20}
-                />
-              ) : (
-                <item.icon className="shrink-0" aria-hidden="true" size={20} />
-              )
+              <IconComponent
+                className="shrink-0"
+                aria-hidden="true"
+                size={20}
+              />
             }>
             {item.submenu.map((submenu) => (
               <Button
@@ -130,11 +124,7 @@ export function SidebarItem() {
         onClick={() => {
           history.push(item.href)
         }}>
-        {item.href === location.pathname ? (
-          <item.filled className="shrink-0" aria-hidden="true" size={22} />
-        ) : (
-          <item.icon className="shrink-0" aria-hidden="true" size={22} />
-        )}
+        <IconComponent className="shrink-0" aria-hidden="true" size={22} />
         {item.name}
       </Button>
     )

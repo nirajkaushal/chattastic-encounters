@@ -1,3 +1,4 @@
+
 /* eslint-disable react/no-unescaped-entities */
 import { useEffect, useMemo, useState } from 'react'
 
@@ -7,7 +8,7 @@ import {
   DropdownMenu,
   DropdownTrigger,
 } from '@heroui/react'
-import toast from 'react-hot-toast'
+import { toast } from 'react-hot-toast'
 import { useHotkeys } from 'react-hotkeys-hook'
 import { CheckCircle, Circle } from 'lucide-react'
 

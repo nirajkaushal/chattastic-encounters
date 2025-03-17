@@ -1,11 +1,12 @@
+
 import { useState } from 'react'
 
 import { Slider, Tooltip } from '@heroui/react'
 import Cropper, { Area } from 'react-easy-crop'
-import { CiNoWaitingSign } from 'react-icons/ci'
-import { HiOutlineArrowSmallLeft } from 'react-icons/hi2'
-import { IoIosSquareOutline } from 'react-icons/io'
-import { LuRectangleHorizontal, LuRectangleVertical } from 'react-icons/lu'
+import { XCircle } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
+import { Square } from 'lucide-react'
+import { RectangleHorizontal, RectangleVertical } from 'lucide-react'
 
 import { Button } from '@/components/ui/Button'
 import getCroppedImg from '@/utils/crop-image'
@@ -70,7 +71,7 @@ export function ImageCropper({
             color="default"
             variant="light"
             onClick={onDiscard}>
-            <HiOutlineArrowSmallLeft size={18} />
+            <ArrowLeft size={18} />
           </Button>
           <span className="text-md font-semibold">Crop Image</span>
         </div>
@@ -85,7 +86,7 @@ export function ImageCropper({
                   onClick={() => {
                     setCropAspectRatio(undefined)
                   }}>
-                  <CiNoWaitingSign size={22} />
+                  <XCircle size={22} />
                 </Button>
               </Tooltip>
               <Tooltip content="1:1">
@@ -96,7 +97,7 @@ export function ImageCropper({
                   onClick={() => {
                     setCropAspectRatio(1)
                   }}>
-                  <IoIosSquareOutline size={22} />
+                  <Square size={22} />
                 </Button>
               </Tooltip>
               <Tooltip content="16:9">
@@ -107,7 +108,7 @@ export function ImageCropper({
                   onClick={() => {
                     setCropAspectRatio(16 / 9)
                   }}>
-                  <LuRectangleHorizontal size={22} />
+                  <RectangleHorizontal size={22} />
                 </Button>
               </Tooltip>
               <Tooltip content="9:16">
@@ -118,7 +119,7 @@ export function ImageCropper({
                   onClick={() => {
                     setCropAspectRatio(9 / 16)
                   }}>
-                  <LuRectangleVertical size={22} />
+                  <RectangleVertical size={22} />
                 </Button>
               </Tooltip>
             </>

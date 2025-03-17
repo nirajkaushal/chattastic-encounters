@@ -1,6 +1,6 @@
+
 import { useHotkeys } from 'react-hotkeys-hook'
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
-import { RiPlayCircleFill, RiStopCircleFill } from 'react-icons/ri'
+import { ChevronLeft, ChevronRight, PlayCircle, StopCircle } from 'lucide-react'
 
 import { Button } from '../ui/Button'
 
@@ -76,7 +76,7 @@ export function PresentationControls() {
         disableRipple
         disableAnimation
         onClick={handlePreviousButton}>
-        <IoIosArrowBack size={18} />
+        <ChevronLeft size={18} />
       </Button>
       <Button
         isIconOnly
@@ -87,9 +87,9 @@ export function PresentationControls() {
         variant="light"
         onClick={handlePresentationToggle}>
         {presentationStarted ? (
-          <RiStopCircleFill size={32} className="text-red-500" />
+          <StopCircle size={32} className="text-red-500" />
         ) : (
-          <RiPlayCircleFill size={32} className="text-foreground" />
+          <PlayCircle size={32} className="text-foreground" />
         )}
       </Button>
       <Button
@@ -100,7 +100,7 @@ export function PresentationControls() {
         disableRipple
         disableAnimation
         onClick={handleNextButton}>
-        <IoIosArrowForward size={18} />
+        <ChevronRight size={18} />
       </Button>
     </div>
   )

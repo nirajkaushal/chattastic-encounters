@@ -1,9 +1,9 @@
+
 import { useState } from 'react'
 
 import { Input, Pagination } from '@heroui/react'
 import { useQuery } from '@tanstack/react-query'
-import { IoSearchOutline } from 'react-icons/io5'
-import { TbLibraryPhoto } from 'react-icons/tb'
+import { Search, LibraryBig } from 'lucide-react'
 
 import { ContentLoading } from '../ContentLoading'
 import { MediaCard } from '../Library/MediaCard'
@@ -63,7 +63,7 @@ export function LibraryContent({
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         startContent={
-          <IoSearchOutline className="text-2xl text-primary-200 pointer-events-none flex-shrink-0" />
+          <Search className="text-2xl text-primary-200 pointer-events-none flex-shrink-0" />
         }
       />
 
@@ -75,7 +75,7 @@ export function LibraryContent({
 
       {libraryQuery.data?.count === 0 && (
         <div className="flex-auto flex flex-col justify-center items-center gap-2">
-          <TbLibraryPhoto size={128} className="text-primary-200" />
+          <LibraryBig size={128} className="text-primary-200" />
           <p className="text-center w-2/3">
             <span className="text-sm text-gray-400 text-center">
               Upload your media files to use them in your projects and designs

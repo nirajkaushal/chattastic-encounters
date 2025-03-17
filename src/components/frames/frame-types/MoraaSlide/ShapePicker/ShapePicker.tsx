@@ -1,9 +1,10 @@
+
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useState } from 'react'
 
 import { Popover, PopoverContent, PopoverTrigger } from '@heroui/react'
-import { LuShapes } from 'react-icons/lu'
+import { Shapes } from 'lucide-react'
 
 import { SHAPE_TYPES, ShapePickerContent } from './ShapePickerContent'
 import { SideMenuItem } from './SideMenuItem'
@@ -82,7 +83,7 @@ export function ShapePicker({
               className="block"
               offset={14}>
               <div className="flex flex-col gap-1 justify-center items-center">
-                <LuShapes size={18} />
+                <Shapes size={18} />
                 {!hideLabel && <span className="text-xs mt-1">Shape</span>}
               </div>
             </Tooltip>

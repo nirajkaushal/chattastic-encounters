@@ -1,3 +1,4 @@
+
 import { useState } from 'react'
 
 import {
@@ -7,8 +8,8 @@ import {
   Input,
   Button,
 } from '@heroui/react'
-import { AiOutlineClose } from 'react-icons/ai'
-import { GoArrowRight } from 'react-icons/go'
+import { X } from 'lucide-react'
+import { MoveRight } from 'lucide-react'
 
 import { useStoreDispatch } from '@/hooks/useRedux'
 import { useEventSelector } from '@/stores/hooks/useEventSections'
@@ -54,7 +55,7 @@ export function MoveToSection({
     <Popover isOpen={isOpen} onOpenChange={(open) => setIsOpen(open)}>
       <PopoverTrigger>
         <div className="grid place-items-center h-full py-2 cursor-pointer gap-1">
-          <GoArrowRight size={22} className="hover:text-primary" />
+          <MoveRight size={22} className="hover:text-primary" />
           <p className="text-xs">Move to</p>
         </div>
       </PopoverTrigger>
@@ -62,7 +63,7 @@ export function MoveToSection({
         <div className="w-[300px]">
           <div className="flex items-center justify-between">
             <p>Choose section</p>
-            <AiOutlineClose
+            <X
               onClick={() => setIsOpen(false)}
               className="cursor-pointer"
             />

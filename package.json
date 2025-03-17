@@ -20,7 +20,8 @@
     "fix-lint": "eslint --fix .",
     "-=-=-=-=-=-=-=-=-=-=-=-=": "",
     "prepare": "husky",
-    "sync-db-types": "supabase gen types --lang=typescript --project-id pcwxaszjgtcbxjdlsguj > src/types/supabase-db.d.ts && prettier -w src/types/supabase-db.d.ts"
+    "sync-db-types": "supabase gen types --lang=typescript --project-id pcwxaszjgtcbxjdlsguj > src/types/supabase-db.d.ts && prettier -w src/types/supabase-db.d.ts",
+    "build:dev": "vite build --mode development"
   },
   "dependencies": {
     "@ai-sdk/openai": "^0.0.13",
